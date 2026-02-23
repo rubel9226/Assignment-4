@@ -1,5 +1,6 @@
-const interviewList = [];
-const rejectedList = [];
+let interviewList = [];
+let rejectedList = [];
+let currentStatus = 'all';
 
 // interviewList.push({name: 'rubel', class: 'diploma'})
 // rejectedList.push({name: 'rubel', class: 'diploma'})
@@ -51,6 +52,9 @@ function toggleStyle(id){
     interviewFilterBtn.classList.remove('btn-info', 'text-base-100', 'btn-active');
     rejectedFilterBtn.classList.remove('btn-info', 'text-base-100', 'btn-active');
 
+    currentStatus = id;
+    console.log(currentStatus);
+
     const selected = document.getElementById(id);
     selected.classList.add('btn-info', 'text-base-100', 'btn-active')
 
@@ -62,11 +66,13 @@ function toggleStyle(id){
         allJobsCon.classList.add('hidden');
         interviewCon.classList.remove('hidden');
         rejectedCon.classList.add('hidden');
+        randerInterview();
     }
     else{
         allJobsCon.classList.add('hidden');
         interviewCon.classList.add('hidden');
         rejectedCon.classList.remove('hidden');
+        randerRejected();
     }
 };
 
@@ -99,16 +105,21 @@ mainCon.addEventListener('click', function(event){
         btn1.classList.add('btn-active');
         btn2.classList.remove('btn-active');
 
-        
 
         const jobExist = interviewList.find(item => item.jobName == cardInfo.jobName);
+        
         if(!jobExist){
             interviewList.push(cardInfo);
         }
-        // console.log()
+        rejectedList = rejectedList.filter(item => item.jobName != cardInfo.jobName);
+
+        if(currentStatus == 'rejected-filter-btn'){
+            randerRejected();
+        }
         showJobs();
-        randerInterview();
-    }else if(event.target.classList.contains('rejected-btn')){
+
+    }
+    else if(event.target.classList.contains('rejected-btn')){
         const jobName = parentNode.querySelector('.job-name').innerText;
         const jobPosition = parentNode.querySelector('.job-position').innerText;
         const jobType = parentNode.querySelector('.job-type').innerText;
@@ -132,9 +143,13 @@ mainCon.addEventListener('click', function(event){
         if(!jobExist){
             rejectedList.push(cardInfo);
         }
-        // console.log()
+
+        interviewList = interviewList.filter(item => item.jobName != cardInfo.jobName);
+
+        if(currentStatus == 'interview-filter-btn'){
+            randerInterview();
+        }
         showJobs();
-        randerRejected();
     };
 });
 
