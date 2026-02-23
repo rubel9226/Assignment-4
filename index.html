@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Tracker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+<body class=" bg-base-200 min-h-screen">
+
+
+    <header class="py-[60px] max-w-[1140px] mx-auto space-y-5">
+        <h1 class="font-bold text-[32px]">Job Appication Tracker</h1>
+        <section class="flex justify-between">
+            <div class="w-[360px] bg-base-100 p-5 rounded-lg shadow-sm">
+                <h4 class="font-medium">Total</h4>
+                <span id="total-show" class="text-2xl font-bold">0</span>
+            </div>
+            <div class="w-[360px] bg-base-100 p-5 rounded-lg shadow-sm">
+                <h4 class="font-medium">Interview</h4>
+                <span id="interview-show" class="text-2xl font-bold text-success">0</span>
+            </div>
+            <div class="w-[360px] bg-base-100 p-5 rounded-lg shadow-sm">
+                <h4 class="font-medium">Rejected</h4>
+                <span id="rejected-show" class="text-2xl font-bold text-error">0</span>
+            </div>
+        </section>
+    </header>
+
+
+    <main class="max-w-[1140px] mx-auto">
+        <h1 class="font-semibold text-[20px]">Available Jobs</h1>
+         
+        <div class="mt-6 mb-4">
+            <button onclick="toggleStyle('all-fillter-btn')" id="all-fillter-btn" class="btn btn-info text-base-100 btn-active btn-soft">All</button>
+            <button onclick="toggleStyle('interview-filter-btn')" id="interview-filter-btn" class="btn btn-soft">Interview</button>
+            <button onclick="toggleStyle('rejected-filter-btn')" id="rejected-filter-btn" class="btn btn-soft">Rejected</button>
+        </div>
+
+        <section id="all-jobs" class="space-y-4">
+            <!-- Job 1 -->
+            <div class="job p-6 bg-base-100 shadow-sm rounded-lg flex justify-between">
+                <div class="space-y-5">
+                    <div>
+                        <h1 class="job-name font-semibold text-[18px]">Job 1</h1>
+                        <p class="job-position text-neutral-500">React Native Developer</p>
+                    </div>
+                    <p class="job-type text-neutral-500 text-[14px]">Remote • Full-time • $130,000 - $175,000</p>
+                    
+                    <div>
+                        <div class="job-status font-medium bg-primary-content inline-block py-2 px-3 mb-2 rounded-[4px]">NOT APPLIED</div>
+                        <p class="work-datails">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                    </div>
+                    <div>
+                        <button class="success-btn btn btn-outline btn-success">Success</button>
+                        <button class="rejected-btn btn btn-outline btn-error">Rejected</button>
+                    </div>
+                </div>
+                <!-- main part 2 -->
+                <div>
+                    <button class="btn text-[20px]"><i class="fa-solid fa-trash-can"></i></button>
+                </div>
+
+
+            </div>
+
+            
+            <!-- Job 2 -->
+            <div class="job p-6 bg-base-100 shadow-sm rounded-lg flex justify-between">
+                <div class="space-y-5">
+                    <div>
+                        <h1 class="job-name font-semibold text-[18px]">Job 2</h1>
+                        <p class="job-position text-neutral-500">React Native Developer</p>
+                    </div>
+                    <p class="job-type text-neutral-500 text-[14px]">Remote • Full-time • $130,000 - $175,000</p>
+                    
+                    <div>
+                        <div class="job-status font-medium bg-primary-content inline-block py-2 px-3 mb-2 rounded-[4px]">NOT APPLIED</div>
+                        <p class="work-datails">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                    </div>
+                    <div>
+                        <button class="success-btn btn btn-outline btn-success">Success</button>
+                        <button class="rejected-btn btn btn-outline btn-error">Rejected</button>
+                    </div>
+                </div>
+                <!-- main part 2 -->
+                <div>
+                    <button class="btn text-[20px]"><i class="fa-solid fa-trash-can"></i></button>
+                </div>
+
+
+            </div>
+
+            
+            <!-- Job 3 -->
+            <div class="job p-6 bg-base-100 shadow-sm rounded-lg flex justify-between">
+                <div class="space-y-5">
+                    <div>
+                        <h1 class="job-name font-semibold text-[18px]">Job 3</h1>
+                        <p class="job-position text-neutral-500">React Native Developer</p>
+                    </div>
+                    <p class="job-type text-neutral-500 text-[14px]">Remote • Full-time • $130,000 - $175,000</p>
+                    
+                    <div>
+                        <div class="job-status font-medium bg-primary-content inline-block py-2 px-3 mb-2 rounded-[4px]">NOT APPLIED</div>
+                        <p class="work-datails">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                    </div>
+                    <div>
+                        <button class="success-btn btn btn-outline btn-success">Success</button>
+                        <button class="rejected-btn btn btn-outline btn-error">Rejected</button>
+                    </div>
+                </div>
+                <!-- main part 2 -->
+                <div>
+                    <button class="btn text-[20px]"><i class="fa-solid fa-trash-can"></i></button>
+                </div>
+
+
+            </div>
+
+            
+            <!-- Job 4 -->
+            <div class="job p-6 bg-base-100 shadow-sm rounded-lg flex justify-between">
+                <div class="space-y-5">
+                    <div>
+                        <h1 class="job-name font-semibold text-[18px]">Job 4</h1>
+                        <p class="job-position text-neutral-500">React Native Developer</p>
+                    </div>
+                    <p class="job-type text-neutral-500 text-[14px]">Remote • Full-time • $130,000 - $175,000</p>
+                    
+                    <div>
+                        <div class="job-status font-medium bg-primary-content inline-block py-2 px-3 mb-2 rounded-[4px]">NOT APPLIED</div>
+                        <p class="work-datails">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                    </div>
+                    <div>
+                        <button class="success-btn btn btn-outline btn-success">Success</button>
+                        <button class="rejected-btn btn btn-outline btn-error">Rejected</button>
+                    </div>
+                </div>
+                <!-- main part 2 -->
+                <div>
+                    <button class="btn text-[20px]"><i class="fa-solid fa-trash-can"></i></button>
+                </div>
+
+
+            </div>
+
+            
+            <!-- Job 5 -->
+            
+
+            
+            <!-- Job 6 -->
+            
+
+            
+            <!-- Job 7 -->
+            
+
+            
+            <!-- Job 8 -->
+            
+
+            
+        </section>
+
+        <section id="interview-con" class=" w-full rounded-lg hidden">
+            <div id="interview-no-job" class="min-h-[400px] bg-base-100 flex flex-col justify-center items-center">
+                <img class="w-[70px]" src="./jobs.png" alt="">
+                <h2 class="font-semibold text-2xl mt-6 mb-1">No jobs available</h2>
+                <p class=" text-neutral-500">Check back soon for new job opportunities</p>
+            </div>
+            <div id="interview" class="space-y-5">
+                <!-- <h1 class="font-semibold text-[20px]">Interview container</h1> -->
+            </div>
+        </section>
+
+        <section id="rejected-con" class="w-full min-h-[400px] rounded-lg hidden">
+            <div id="rejected-no-job" class=" flex bg-base-100 min-h-[400px] flex-col justify-center items-center">
+                <img class="w-[70px]" src="./jobs.png" alt="">
+                <h2 class="font-semibold text-2xl mt-6 mb-1">No jobs available</h2>
+                <p class=" text-neutral-500">Check back soon for new job opportunities</p>
+            </div> 
+            <div id="rejected" class="space-y-5">
+                
+            </div>
+        </section>
+    </main>
+
+    
+
+    <script src="all-function.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
