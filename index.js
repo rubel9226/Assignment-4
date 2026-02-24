@@ -151,7 +151,7 @@ mainCon.addEventListener('click', function(event){
             randerRejected();
         }
         showJobs();
-
+        showJobOfFull();
     }
     else if(event.target.classList.contains('rejected-btn')){
         const jobName = parentNode.querySelector('.job-name').innerText;
@@ -189,6 +189,7 @@ mainCon.addEventListener('click', function(event){
             randerInterview();
         }
         showJobs();
+        showJobOfFull();
     }else if(event.target.classList.contains('dalate-btn-icon')){
         const parentNode = event.target.parentNode.parentNode.parentNode;
         parentNode.remove();
@@ -232,7 +233,7 @@ function randerInterview(){
             
             <div>
                 <div class="job-status font-medium bg-primary-content inline-block py-2 px-3 mb-2 rounded-[4px] bg-green-200">${success.jobStatus}</div>
-                <p class="work-datails">${success.workDatails}</p>
+                <p class="work-datails line-clamp-2">${success.workDatails}</p>
             </div>
             <div>
                 <button class="success-btn btn btn-outline btn-success btn-active">Success</button>
@@ -264,7 +265,7 @@ function randerRejected(){
             
             <div>
                 <div class="job-status font-medium bg-primary-content inline-block py-2 px-3 mb-2 rounded-[4px] bg-red-200">${reject.jobStatus}</div>
-                <p class="work-datails">${reject.workDatails}</p>
+                <p class="work-datails line-clamp-2">${reject.workDatails}</p>
             </div>
             <div>
                 <button class="success-btn btn btn-outline btn-success">Success</button>

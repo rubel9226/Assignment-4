@@ -13,18 +13,18 @@
 <body class=" bg-base-200 min-h-screen">
 
 
-    <header class="py-[60px] max-w-[1140px] mx-auto space-y-5">
-        <h1 class="font-bold text-[32px]">Job Appication Tracker</h1>
-        <section class="flex justify-between">
-            <div class="w-[360px] bg-base-100 p-5 rounded-lg shadow-sm">
+    <header class="w-11/12 md:w-full py-[60px] max-w-[1140px] mx-auto space-y-5">
+        <h1 class="font-bold text-2xl md:text-[32px]">Job Appication Tracker</h1>
+        <section class="flex flex-col md:flex-row justify-center items-center gap-2 md:justify-between">
+            <div class="w-full md:w-[360px] bg-base-100 p-5 rounded-lg shadow-sm">
                 <h4 class="font-medium">Total</h4>
                 <span id="total-show" class="text-2xl font-bold">0</span>
             </div>
-            <div class="w-[360px] bg-base-100 p-5 rounded-lg shadow-sm">
+            <div class="w-full md:w-[360px] bg-base-100 p-5 rounded-lg shadow-sm">
                 <h4 class="font-medium">Interview</h4>
                 <span id="interview-show" class="text-2xl font-bold text-success">0</span>
             </div>
-            <div class="w-[360px] bg-base-100 p-5 rounded-lg shadow-sm">
+            <div class="w-full md:w-[360px] bg-base-100 p-5 rounded-lg shadow-sm">
                 <h4 class="font-medium">Rejected</h4>
                 <span id="rejected-show" class="text-2xl font-bold text-error">0</span>
             </div>
@@ -32,7 +32,7 @@
     </header>
     
     
-    <main class="max-w-[1140px] mx-auto">
+    <main class="w-11/12 md:w-full max-w-[1140px] mx-auto ">
         <div>
             <div class="flex justify-between">
                 <h1 class="font-semibold text-[20px]">Available Jobs</h1>
@@ -69,7 +69,7 @@
 
                         <div>
                             <div class="job-status font-medium bg-primary-content inline-block py-2 px-3 mb-2 rounded-[4px]">NOT APPLIED</div>
-                            <p class="work-datails">Develop and maintain cross-platform mobile features using React Native. Collaborate with product and design teams to enhance music streaming experience.</p>
+                            <p class="work-datails line-clamp-2">Develop and maintain cross-platform mobile features using React Native. Collaborate with product and design teams to enhance music streaming experience.</p>
                         </div>
                         <div>
                             <button class="success-btn btn btn-outline btn-success">Success</button>
@@ -97,7 +97,7 @@
 
                         <div>
                             <div class="job-status font-medium bg-primary-content inline-block py-2 px-3 mb-2 rounded-[4px]">NOT APPLIED</div>
-                            <p class="work-datails">Build scalable mobile components used by millions of riders and drivers. Optimize performance and ensure seamless cross-platform functionality.</p>
+                            <p class="work-datails line-clamp-2">Build scalable mobile components used by millions of riders and drivers. Optimize performance and ensure seamless cross-platform functionality.</p>
                         </div>
                         <div>
                             <button class="success-btn btn btn-outline btn-success">Success</button>
@@ -125,7 +125,7 @@
 
                         <div>
                             <div class="job-status font-medium bg-primary-content inline-block py-2 px-3 mb-2 rounded-[4px]">NOT APPLIED</div>
-                            <p class="work-datails">Create high-performance mobile interfaces and reusable UI components. Improve playback experience and app responsiveness.</p>
+                            <p class="work-datails line-clamp-2">Create high-performance mobile interfaces and reusable UI components. Improve playback experience and app responsiveness.</p>
                         </div>
                         <div>
                             <button class="success-btn btn btn-outline btn-success">Success</button>
@@ -153,7 +153,7 @@
 
                         <div>
                             <div class="job-status font-medium bg-primary-content inline-block py-2 px-3 mb-2 rounded-[4px]">NOT APPLIED</div>
-                            <p class="work-datails">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                            <p class="work-datails line-clamp-2">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
                         </div>
                         <div>
                             <button class="success-btn btn btn-outline btn-success">Success</button>
@@ -171,26 +171,114 @@
 
 
                 <!-- Job 5 -->
+                <div class="job p-6 bg-base-100 shadow-sm rounded-lg flex justify-between">
+                    <div class="space-y-5">
+                        <div>
+                            <h1 class="job-name font-semibold text-[18px]">Lyft</h1>
+                            <p class="job-position text-neutral-500">App Experience Engineer</p>
+                        </div>
+                        <p class="job-type text-neutral-500 text-[14px]">Remote • Full-time • $130,000 - $175,000</p>
 
+                        <div>
+                            <div class="job-status font-medium bg-primary-content inline-block py-2 px-3 mb-2 rounded-[4px]">NOT APPLIED</div>
+                            <p class="work-datails line-clamp-2">Work on rider-facing mobile applications. Implement scalable architecture and maintain cross-platform consistency.</p>
+                        </div>
+                        <div>
+                            <button class="success-btn btn btn-outline btn-success">Success</button>
+                            <button class="rejected-btn btn btn-outline btn-error">Rejected</button>
+                        </div>
+                    </div>
+                    <!-- main part 2 -->
+                    <div>
+                        <button class="dalate-btn btn text-[20px]">
+                            <i class="dalate-btn-icon fa-solid fa-trash-can"></i></button>
+                    </div>
+                </div>
 
 
                 <!-- Job 6 -->
+                 <div class="job p-6 bg-base-100 shadow-sm rounded-lg flex justify-between">
+                    <div class="space-y-5">
+                        <div>
+                            <h1 class="job-name font-semibold text-[18px]">Robinhood</h1>
+                            <p class="job-position text-neutral-500">Mobile Platform Engineer</p>
+                        </div>
+                        <p class="job-type text-neutral-500 text-[14px]">Remote • Full-time • $145,000 - $200,000</p>
 
+                        <div>
+                            <div class="job-status font-medium bg-primary-content inline-block py-2 px-3 mb-2 rounded-[4px]">NOT APPLIED</div>
+                            <p class="work-datails line-clamp-2">Build trading and portfolio management features using React Native. Ensure real-time data updates and smooth UX.</p>
+                        </div>
+                        <div>
+                            <button class="success-btn btn btn-outline btn-success">Success</button>
+                            <button class="rejected-btn btn btn-outline btn-error">Rejected</button>
+                        </div>
+                    </div>
+                    <!-- main part 2 -->
+                    <div>
+                        <button class="dalate-btn btn text-[20px]">
+                            <i class="dalate-btn-icon fa-solid fa-trash-can"></i></button>
+                    </div>
+                </div>
 
 
                 <!-- Job 7 -->
+                <div class="job p-6 bg-base-100 shadow-sm rounded-lg flex justify-between">
+                    <div class="space-y-5">
+                        <div>
+                            <h1 class="job-name font-semibold text-[18px]">Notion</h1>
+                            <p class="job-position text-neutral-500">React Native App Engineer</p>
+                        </div>
+                        <p class="job-type text-neutral-500 text-[14px]">Remote • Full-time • $120,000 - $155,000</p>
 
+                        <div>
+                            <div class="job-status font-medium bg-primary-content inline-block py-2 px-3 mb-2 rounded-[4px]">NOT APPLIED</div>
+                            <p class="work-datails line-clamp-2">Develop collaborative workspace features for mobile users. Focus on performance optimization and UI consistency.</p>
+                        </div>
+                        <div>
+                            <button class="success-btn btn btn-outline btn-success">Success</button>
+                            <button class="rejected-btn btn btn-outline btn-error">Rejected</button>
+                        </div>
+                    </div>
+                    <!-- main part 2 -->
+                    <div>
+                        <button class="dalate-btn btn text-[20px]">
+                            <i class="dalate-btn-icon fa-solid fa-trash-can"></i></button>
+                    </div>
+                </div>
 
 
                 <!-- Job 8 -->
+                <div class="job p-6 bg-base-100 shadow-sm rounded-lg flex justify-between">
+                    <div class="space-y-5">
+                        <div>
+                            <h1 class="job-name font-semibold text-[18px]">Duolingo</h1>
+                            <p class="job-position text-neutral-500">Mobile Experience Developer</p>
+                        </div>
+                        <p class="job-type text-neutral-500 text-[14px]">Remote • Full-time • $115,000 - $150,000</p>
 
+                        <div>
+                            <div class="job-status font-medium bg-primary-content inline-block py-2 px-3 mb-2 rounded-[4px]">NOT APPLIED</div>
+                            <p class="work-datails line-clamp-2">Build interactive learning features using React Native. Improve animation performance and cross-device compatibility.</p>
+                        </div>
+                        <div>
+                            <button class="success-btn btn btn-outline btn-success">Success</button>
+                            <button class="rejected-btn btn btn-outline btn-error">Rejected</button>
+                        </div>
+                    </div>
+                    <!-- main part 2 -->
+                    <div>
+                        <button class="dalate-btn btn text-[20px]">
+                            <i class="dalate-btn-icon fa-solid fa-trash-can"></i></button>
+                    </div>
+                </div>
 
 
             </section>
         </div>
 
         <section id="interview-con" class=" w-full rounded-lg hidden">
-            <div id="interview-no-job" class="min-h-[400px] bg-base-100 flex flex-col justify-center items-center">
+            <div id="interview-no-job" class="min-h-[250px] md:min-h-[400px] bg-base-100 flex flex-col justify-center items-center">
                 <img class="w-[70px]" src="./jobs.png" alt="">
                 <h2 class="font-semibold text-2xl mt-6 mb-1">No jobs available</h2>
                 <p class=" text-neutral-500">Check back soon for new job opportunities</p>
@@ -200,8 +288,8 @@
             </div>
         </section>
 
-        <section id="rejected-con" class="w-full min-h-[400px] rounded-lg hidden">
-            <div id="rejected-no-job" class=" flex bg-base-100 min-h-[400px] flex-col justify-center items-center">
+        <section id="rejected-con" class="w-full rounded-lg hidden">
+            <div id="rejected-no-job" class=" flex bg-base-100 min-h-[250px] md:min-h-[400px] flex-col justify-center items-center">
                 <img class="w-[70px]" src="./jobs.png" alt="">
                 <h2 class="font-semibold text-2xl mt-6 mb-1">No jobs available</h2>
                 <p class=" text-neutral-500">Check back soon for new job opportunities</p>
