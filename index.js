@@ -14,10 +14,12 @@ const mainCon = document.querySelector('main');
 const allFilterBtn = document.getElementById('all-fillter-btn');
 const interviewFilterBtn = document.getElementById('interview-filter-btn');
 const rejectedFilterBtn = document.getElementById('rejected-filter-btn');
+const availabeAllCon = document.getElementById('available-job-con')
+const availabeAllCount = document.getElementById('available-job-count')
 
-
-
+const allJobsContainer = document.getElementById('all-jobs-con');
 const allJobsCon = document.getElementById('all-jobs');
+const allNoJob = document.getElementById('all-no-job');
 const interviewCon = document.getElementById('interview-con');
 const interview = document.getElementById('interview');
 const interviewNoJob = document.getElementById('interview-no-job');
@@ -27,12 +29,18 @@ const rejectedNoJob = document.getElementById('rejected-no-job');
 
 
 function showJobs(){
-    const allJob = allJobsCon.children.length;
-    totalShow.innerText = allJob;
-
+    allNoJob.classList.add('hidden');
     interviewNoJob.classList.remove('hidden');
     rejectedNoJob.classList.remove('hidden');
 
+
+    const allJob = allJobsCon.children.length;
+    totalShow.innerText = allJob;
+    availabeAllCount.innerText = allJob;
+    if(allJob == 0){
+        allNoJob.classList.remove('hidden');
+    }
+    
     const interviewJob = interviewList.length;
     interviewShow.innerText = interviewJob;
     if(interviewShow.innerText != 0){
@@ -44,6 +52,13 @@ function showJobs(){
     if(rejectedShow.innerText != 0){
         rejectedNoJob.classList.add('hidden');
     }
+
+    // if(id == 'all-fillter-btn'){
+    //     availabeAllCount.innerText = rejected.children.length;
+    // }else if(id == 'interview-filter-btn'){
+    //     availabeAllCount.innerText = allJob;
+        
+    // }
 }
 showJobs();
 
@@ -59,22 +74,41 @@ function toggleStyle(id){
     selected.classList.add('btn-info', 'text-base-100', 'btn-active')
 
     if(id == 'all-fillter-btn'){
-        allJobsCon.classList.remove('hidden');
+        allJobsContainer.classList.remove('hidden');
         interviewCon.classList.add('hidden');
         rejectedCon.classList.add('hidden');
+        availabeAllCount.innerText = allJobsCon.children.length;
     }else if(id == 'interview-filter-btn'){
-        allJobsCon.classList.add('hidden');
+        allJobsContainer.classList.add('hidden');
         interviewCon.classList.remove('hidden');
         rejectedCon.classList.add('hidden');
         randerInterview();
+        availabeAllCount.innerText = interview.children.length;
     }
     else{
-        allJobsCon.classList.add('hidden');
+        allJobsContainer.classList.add('hidden');
         interviewCon.classList.add('hidden');
         rejectedCon.classList.remove('hidden');
         randerRejected();
+        availabeAllCount.innerText = rejected.children.length;
+        
     }
 };
+
+function showJobOfFull(){
+    if(currentStatus == 'all-fillter-btn'){
+        console.log('hello');
+        availabeAllCount.innerText = allJobsCon.children.length;
+    }else if(currentStatus == 'interview-filter-btn'){
+        
+        availabeAllCount.innerText = interview.children.length;
+    }
+    else if(currentStatus == 'rejected-filter-btn'){
+        availabeAllCount.innerText = rejected.children.length;
+        
+    }
+    console.log('hi');
+}
 
 mainCon.addEventListener('click', function(event){
     const parentNode = event.target.parentNode.parentNode;
@@ -130,7 +164,12 @@ mainCon.addEventListener('click', function(event){
         jobStatus.innerText = 'Rejected';
 
         const cardInfo = {
-            jobName, jobPosition, jobType, jobStatus:'Rejected', workDatails}
+            id: Date.now(),
+            jobName, 
+            jobPosition,
+            jobType, 
+            jobStatus:'Rejected', 
+            workDatails}
 
 
         const btnParent = event.target.parentNode;
@@ -150,7 +189,32 @@ mainCon.addEventListener('click', function(event){
             randerInterview();
         }
         showJobs();
-    };
+    }else if(event.target.classList.contains('dalate-btn-icon')){
+        const parentNode = event.target.parentNode.parentNode.parentNode;
+        parentNode.remove();
+        showJobs();
+        showJobOfFull();
+    }else if(event.target.closest('.dalate-btn')){
+        parentNode.remove();
+        showJobs();
+        showJobOfFull();
+    }
+    else if(event.target.closest('.btn-rej-int')){
+        const deleteBtn = event.target.closest('.btn-rej-int');
+        const jobCard = deleteBtn.closest('.job');
+        const jobName = jobCard.getElementsByClassName('job-name')
+        if(currentStatus == 'interview-filter-btn'){
+            interviewList = interviewList.filter(item => item.jobName != jobName[0].innerText);
+            randerInterview();
+            // randerInterview();
+        }else if(currentStatus == 'rejected-filter-btn'){
+            randerInterview();
+            rejectedList = rejectedList.filter(item => item.jobName != jobName[0].innerText);
+            randerRejected();
+        }
+        showJobs();
+        showJobOfFull();
+    }
 });
 
 function randerInterview(){
@@ -177,7 +241,7 @@ function randerInterview(){
         </div>
         <!-- main part 2 -->
         <div>
-            <button class="btn text-[20px]"><i class="fa-solid fa-trash-can"></i></button>
+            <button class="btn-rej-int btn text-[20px]"><i class="fa-solid fa-trash-can"></i></button>
         </div>
         `;
         interview.appendChild(div);
@@ -209,7 +273,7 @@ function randerRejected(){
         </div>
         <!-- main part 2 -->
         <div>
-            <button class="btn text-[20px]"><i class="fa-solid fa-trash-can"></i></button>
+            <button class="btn-rej-int btn text-[20px]"><i class="fa-solid fa-trash-can"></i></button>
         </div>
         `;
         rejected.appendChild(div);
